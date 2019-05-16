@@ -1,0 +1,37 @@
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp"
+        tools:context="com.reqica.drilon.android.securepreferencesxsample.StoreValueFragment">
+
+    <EditText
+            android:layout_width="match_parent"
+            android:id="@+id/input_key_edit_text"
+            android:hint="@string/input_key_you_want_to_store_here"
+            android:importantForAutofill="no"
+            tools:targetApi="o"
+            android:inputType="text"
+            android:layout_height="wrap_content"/>
+
+    <EditText
+            android:layout_width="match_parent"
+            android:id="@+id/input_value_edit_text"
+            android:hint="@string/input_value_you_want_to_store_here"
+            android:importantForAutofill="no"
+            tools:targetApi="o"
+            android:inputType="text"
+            android:layout_height="wrap_content"/>
+
+    <Button
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:text="@string/store_value"
+            android:layout_marginTop="16dp"
+            android:id="@+id/store_value_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+</LinearLayout>

@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">SecurePreferencesX</string>
+    <string name="store_value">Store value</string>
+    <string name="input_key_you_want_to_store_here">Input key for value you want to store here</string>
+    <string name="input_value_you_want_to_store_here">Input value you want to store here</string>
+    <string name="enter_key_you_want_to_retrieve_here">Enter key you want to retrieve here</string>
+    <string name="error_message_no_value_for_key">No value exists in SecurePreferences for key: %s</string>
+    <string name="retrieve_value">Retrieve value</string>
+    <string name="retrieved_value">Retrieved value  %s</string>
+    <string name="menu_store_value">Store Value</string>
+    <string name="menu_retrieve_value">Retrieve Value</string>
+    <string name="error_message_fields_cannot_be_empty">Fields cannot be empty!</string>
+    <string name="error_message_field_cannot_be_empty">Field cannot be empty!</string>
+    <string name="success_message_successfully_stored_value">Successfully stored %s in SecurePreferences</string>
+</resources>

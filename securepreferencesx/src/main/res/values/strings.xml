@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SecurePreferencesX</string>
+    <string name="error_message_preferencesFileName_null_or_empty">"SecurePreferences not initialized, preferencesFileName cannot be null or empty. Please call SecurePreferences.initSecurePreferences(\"preferencesFileName\") before using the library"</string>
+</resources>
