@@ -26,7 +26,7 @@ object SecurePreferences {
     }
 
     @Throws(NullPointerException::class)
-    fun getValue(context: Context, key: String, defaultValue: String?): String? {
+    fun retrieveValue(context: Context, key: String, defaultValue: String?): String? {
         return if (preferencesFileName.isNullOrEmpty()) {
             throw NullPointerException(context.getString(R.string.error_message_preferencesFileName_null_or_empty))
         } else {

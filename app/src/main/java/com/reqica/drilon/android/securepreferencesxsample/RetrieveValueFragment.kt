@@ -28,7 +28,7 @@ class RetrieveValueFragment : Fragment() {
                 Toast.makeText(context, getString(R.string.error_message_field_cannot_be_empty), Toast.LENGTH_SHORT)
                     .show()
             } else {
-                val retrievedValue = SecurePreferences.getValue(context!!, input_key_edit_text.text.toString(), null)
+                val retrievedValue = SecurePreferences.retrieveValue(context!!, input_key_edit_text.text.toString(), null)
                 if (retrievedValue.isNullOrEmpty()) {
                     retrieved_value_text_view.text =
                         getString(R.string.error_message_no_value_for_key, input_key_edit_text.text.toString())
