@@ -7,7 +7,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.reqica.drilon.android.securepreferences"
+        applicationId "com.reqica.drilon.android.securepreferencesxsample"
         minSdkVersion 23
         targetSdkVersion 28
         versionCode versionCode
