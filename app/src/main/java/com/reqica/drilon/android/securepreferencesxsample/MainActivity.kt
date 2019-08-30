@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.navigation.Navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.reqica.drilon.android.securepreferences.R
 
 class MainActivity : AppCompatActivity() {
 

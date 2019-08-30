@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.reqica.drilon.android.securepreferences.R
 import com.reqica.drilon.android.securepreferencesx.SecurePreferences
 import kotlinx.android.synthetic.main.fragment_retrieve_value.*
 
