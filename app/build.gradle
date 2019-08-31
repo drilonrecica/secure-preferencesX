@@ -1,15 +1,13 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     defaultConfig {
-        applicationId "com.reqica.drilon.android.securepreferences"
+        applicationId "com.reqica.drilon.android.securepreferencesxsample"
         minSdkVersion 23
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode versionCode
         versionName "${versionName}"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -31,5 +29,5 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation "android.arch.navigation:navigation-fragment-ktx:1.0.0"
     implementation "android.arch.navigation:navigation-ui-ktx:1.0.0"
-    implementation 'com.android.support:design:28.0.0'
+    implementation 'com.android.support:design:29.0.0'
 }
