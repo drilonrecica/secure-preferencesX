@@ -1,42 +1,110 @@
 # SecurePreferencesX
 
-[![Build Status](https://travis-ci.com/drilonrecica/secure-preferencesX.svg?branch=master)](https://travis-ci.com/drilonrecica/secure-preferencesX)
-[![API](https://img.shields.io/badge/API-23%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=23)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+> **Archived / discontinued**
+>
+> SecurePreferencesX is a historical Android library that provided a small wrapper around Jetpack Security's encrypted `SharedPreferences` APIs.
+>
+> **Do not use this library in new applications.**
 
-### Secure SharedPreferences wrapper for the new Jetpack Security solution
+This repository is preserved for historical and reference purposes and is no longer maintained.
 
+## Background
 
-##### Note: This library is currently available as an alpha library and may be subject to sudden API breaks and changes between versions.
+SecurePreferencesX was created to simplify the use of the then-new Android Jetpack Security APIs for storing encrypted key-value data.
 
-The SecurePreferencesX library is a wrapper around the new Security library, part of Android Jetpack, which provides an implementation of the security best practices related to reading and writing data at rest, as well as key creation and verification.
+Instead of configuring the underlying encrypted preferences implementation directly, applications could initialize SecurePreferencesX once and then use a small API for storing and retrieving values.
 
-SecurePreferencesX abstracts the Security library so you only have to once initialize SecurePreferencesX with your app's `packageName` and a `preferenceFileName` and after that you can start storing and retrieving data from the SecurePreferences.
+The library was built on top of AndroidX Security Crypto and delegated encryption, decryption, and key management to Jetpack Security.
 
-#### How to use the Library:
+## Why is this project archived?
 
-Initialize the library:
-``` kotlin
-SecurePreferences.initSecurePreferences(packageName, "SecurePreferencesFileName")
+The Android security APIs this project was built around have since changed substantially.
+
+In particular, AndroidX now marks APIs including:
+
+* `EncryptedSharedPreferences`
+* `MasterKey`
+* `MasterKeys`
+
+as deprecated.
+
+Because SecurePreferencesX is fundamentally a wrapper around those APIs, updating the library would require redesigning its underlying security model rather than simply updating its dependencies.
+
+For new Android applications, use the current Android security guidance and platform APIs instead.
+
+Relevant documentation:
+
+* [Android cryptography documentation](https://developer.android.com/privacy-and-security/cryptography)
+* [Android Keystore system](https://developer.android.com/privacy-and-security/keystore)
+* [AndroidX Security Crypto API reference](https://developer.android.com/reference/androidx/security/crypto/package-summary)
+
+## Historical API
+
+The following examples document how SecurePreferencesX was originally used.
+
+### Initialize
+
+```kotlin
+SecurePreferences.initSecurePreferences(
+    packageName,
+    "SecurePreferencesFileName"
+)
 ```
 
-Store value in SecurePreferencesX:
-``` kotlin
-SecurePreferences.storeValue(context, "key", "value")
+### Store a value
+
+```kotlin
+SecurePreferences.storeValue(
+    context,
+    "key",
+    "value"
+)
 ```
 
-Retrieve value from SecurePreferencesX:
-``` kotlin
-SecurePreferences.getValue(context, "key", "yourDefaultValue")
+### Retrieve a value
+
+```kotlin
+val value = SecurePreferences.getValue(
+    context,
+    "key",
+    "defaultValue"
+)
 ```
 
-#### Important Information & Links:
+## Original behavior
 
-* This library works only from API 23 and upwards
+SecurePreferencesX:
 
-* The creation, storage and handling of the encryption/decryption keys is all handled by the Android Jetpack Security library
+* provided a minimal wrapper around Jetpack Security encrypted preferences;
+* handled creation and access to encrypted `SharedPreferences`;
+* delegated encryption and key management to AndroidX Security;
+* supported Android API 23 and above;
+* provided a simpler application-facing API for storing and retrieving encrypted values.
 
-* https://developer.android.com/jetpack/androidx/releases/security
+## Security notice
 
-* https://developer.android.com/topic/security/data.md
+This repository contains an old implementation built against early versions of AndroidX Security.
+
+It should **not** be treated as a current security recommendation or used as a dependency in new production applications.
+
+Security-sensitive storage should be implemented according to current Android platform guidance, taking into account requirements such as:
+
+* Android Keystore usage;
+* key generation and lifecycle;
+* authentication requirements;
+* backup and restore behavior;
+* key invalidation;
+* migration between storage formats;
+* supported Android API levels.
+
+## Project status
+
+**Status:** Archived
+**Maintenance:** Discontinued
+**Recommended for new projects:** No
+
+The source remains available because it represents the original implementation and may still be useful for historical reference.
+
+## License
+
+Licensed under the [Apache License 2.0](LICENSE).
